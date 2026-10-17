@@ -77,6 +77,9 @@ function doPost(e) {
     var ss = SpreadsheetApp.getActiveSpreadsheet();
     var submittedAt = data.submittedAt ? new Date(data.submittedAt) : new Date();
     var guestRow = findGuestRow(ss, data.code);
+    // Safety net: the code must belong to the name that responded; otherwise don't touch the list or email a letter.
+    var mismatch = null;
+    if (guestRow && !nameMatches(guestRow.values, data)) { mismatch = guestRow; guestRow = null; }
 
     // One response per invitation: ignore repeats (from any device) without touching anything
     if (guestRow && isAnswered(guestRow.values)) return jsonOut({ ok: true, duplicate: true });
@@ -85,7 +88,7 @@ function doPost(e) {
     if (guestRow) updateGuestListRow(guestRow, data, submittedAt);
     var tally = computeTally(ss);
 
-    if (SEND_COUPLE_NOTIFICATIONS) safely('couple email', function () { notifyCouple(data, tally, guestRow); });
+    if (SEND_COUPLE_NOTIFICATIONS) safely('couple email', function () { notifyCouple(data, tally, guestRow, mismatch); });
     if (SEND_GUEST_CONFIRMATIONS && guestRow) safely('guest letter', function () { sendGuestLetter(guestRow, data); });
 
     return jsonOut({ ok: true });
@@ -172,6 +175,16 @@ function findGuestRow(ss, code) {
   return null;
 }
 
+function normName(v) { return String(v == null ? '' : v).toLowerCase().replace(/[^a-z0-9]/g, ''); }
+
+// True when the responding name is the main guest or one of the named party members on that Guest List row
+function nameMatches(rowValues, data) {
+  var want = normName(data.name);
+  if (!want) return false;
+  var names = [rowValues[GL.MAIN - 1]].concat(String(rowValues[3] || '').split(','));
+  return names.some(function (n) { return normName(n) === want; });
+}
+
 function isAnswered(rowValues) {
   var s = String(rowValues[GL.STATUS - 1] || '').trim();
   return s === 'Attending' || s === 'Declined';
@@ -233,7 +246,7 @@ function memberListHtml(members) {
   }).join('');
 }
 
-function notifyCouple(data, tally, guestRow) {
+function notifyCouple(data, tally, guestRow, mismatch) {
   if (!coupleConfigured()) { console.warn('COUPLE_EMAILS still contains placeholders — couple notification skipped.'); return; }
   var who = guestRow ? String(guestRow.values[GL.MAIN - 1]) : data.name;
   var subject = data.attending === 'Yes'
@@ -241,7 +254,9 @@ function notifyCouple(data, tally, guestRow) {
     : 'RSVP: ' + who + ' — declined';
 
   var rows = data.members.length ? memberListHtml(data.members) : '<tr><td>' + esc(data.attendeeBreakdown) + '</td></tr>';
-  var warn = guestRow ? '' : '<p style="background:#fff3cd;padding:8px 12px;border-radius:6px;">Heads up: this invitation code was not found in the "Guest List" tab, so the list was not updated.</p>';
+  var warn = guestRow ? '' : '<p style="background:#fff3cd;padding:8px 12px;border-radius:6px;">' + (mismatch
+    ? 'Heads up: invitation code ' + esc(data.code) + ' belongs to &ldquo;' + esc(String(mismatch.values[GL.MAIN - 1])) + '&rdquo; in your "Guest List" tab, but the response came from &ldquo;' + esc(data.name) + '&rdquo;. The list was NOT updated and no letter was sent. Check that the Guest List tab matches the website.'
+    : 'Heads up: this invitation code was not found in the "Guest List" tab, so the list was not updated.') + '</p>';
   var html =
     '<div style="font-family:Georgia,serif;color:' + PALETTE.ink + ';max-width:560px;">' +
     '<h2 style="margin:0 0 4px;color:' + PALETTE.roseDeep + ';font-weight:normal;font-style:italic;">New RSVP</h2>' +
@@ -329,4 +344,84 @@ function authorizeScript() {
   LockService.getScriptLock();
   SpreadsheetApp.getActiveSpreadsheet().getName();
   MailApp.getRemainingDailyQuota();
+}
+
+/* ------------------------------------------------------------------ one-time helper */
+
+// The invitation list exactly as on the website (assets/data/guests.json): [code, side, main guest, party members, seats]
+var GUEST_SEED = [
+  ["JPA001","Groom","Ma. Theresa Angeles","Ma. Theresa Angeles",1],
+  ["JPA002","Groom","Alan Jay Angeles","Alan Jay Angeles",1],
+  ["JPA003","Groom","Teresita Lopez","Teresita Lopez",1],
+  ["JPA004","Groom","Alliyah Shantelle Angeles","Alliyah Shantelle Angeles",1],
+  ["JPA005","Groom","Katrina Paola Ramirez","Katrina Paola Ramirez, Michael Angelo Ramirez, Alexis Katherine Ramirez",3],
+  ["JPA006","Groom","Noah Angeles","Noah Angeles",1],
+  ["JPA007","Groom","Shelby Angeles","Shelby Angeles",1],
+  ["JPA008","Groom","Edna Lopez","Edna Lopez, Gab Lopez, JJ Lopez, Jeffrey Lopez",4],
+  ["JPA009","Groom","Reymart Landingin","Reymart Landingin, Derrick Garcia",2],
+  ["JPA010","Groom","Josh De Dios","Josh De Dios, Amharry Quibal",2],
+  ["JPA011","Groom","Kristine Joy Escoto","Kristine Joy Escoto, Chester Escoto",2],
+  ["JPA013","Groom","Jayson Abamo","Jayson Abamo",1],
+  ["JPA014","Groom","Shiela Miclat","Shiela Miclat",1],
+  ["JPA015","Groom","Winvic Gonzales","Winvic Gonzales",1],
+  ["JPA016","Groom","Marlou Roxas","Marlou Roxas",1],
+  ["JPA017","Groom","Sandra David","Sandra David",1],
+  ["JPA018","Groom","Ron Macatuno","Ron Macatuno",1],
+  ["JPA019","Groom","Ton Malonzo","Ton Malonzo",1],
+  ["JPA020","Groom","Rayniel Reynaldo","Rayniel Reynaldo, Kayeneth Reynaldo",2],
+  ["JPA022","Groom","Marx Castro","Marx Castro, Kaye Medina",2],
+  ["JPA023","Groom","Arlene Joy Lazaro","Arlene Joy Lazaro, Angelo Lazaro, Aaron Lazaro",3],
+  ["JPA024","Groom","Marcelina Malonzo","Marcelina Malonzo, Jopet Malonzo",2],
+  ["JPA026","Groom","Lilia Esquivel","Lilia Esquivel, Ron Esquivel",2],
+  ["JPA028","Groom","Marion Pablo","Marion Pablo, Maria Angela Leonardo",2],
+  ["JPA030","Groom","Precious Cabarloc","Precious Cabarloc, JC Cabarloc",2],
+  ["JPA032","Groom","Kyla Gonzales","Kyla Gonzales",1],
+  ["JPA034","Groom","Alena Deles","Alena Deles, Allen John Deles, Antonette Deles, Angie Deles",4],
+  ["JPA035","Groom","Edgar Salvador","Edgar Salvador",1],
+  ["JPA036","Groom","Rosemarie Roxas","Rosemarie Roxas, Abit Dumalaog",2],
+  ["JPA037","Groom","Rowena Caro","Rowena Caro, Jonathan Caro",2],
+  ["JPA038","Groom","Ma. Lourdes Salvador","Ma. Lourdes Salvador, Joel Salvador",2],
+  ["JPA039","Groom","Rowie Miranda","Rowie Miranda",1],
+  ["JPA040","Groom","Reynaldo Munoz","Reynaldo Munoz",1],
+  ["JPA041","Bride","Emelyn Lasquite","Emelyn Lasquite",1],
+  ["JPA042","Bride","Arnulfo Lasquite","Arnulfo Lasquite",1],
+  ["JPA043","Bride","Athalia Jaileen Cimara","Athalia Jaileen Cimara",1],
+  ["JPA044","Bride","Angela Lasquite","Angela Lasquite",1],
+  ["JPA045","Bride","Mary Grace Lasquite","Mary Grace Lasquite, Michalin Lajara, Matthew Lajara",3],
+  ["JPA046","Bride","Mary Ann Lasquite","Mary Ann Lasquite",1],
+  ["JPA047","Bride","Arnulfo Junior Lasquite","Arnulfo Junior Lasquite",1],
+  ["JPA048","Bride","Jhun Alfredo Lasquite","Jhun Alfredo Lasquite, Anaya Riego, Lady Virtudazo, Tyler Lasquite",4],
+  ["JPA049","Bride","Rose Cairme","Rose Cairme, Riva Lasquite, John Gabriel Lasquite",3],
+  ["JPA050","Bride","Joandrea Lasquite","Joandrea Lasquite, Arthur Lasquite, Ezion Lasquite",3],
+  ["JPA051","Bride","Lyra Jomillo","Lyra Jomillo",1],
+  ["JPA052","Bride","Lareza Jomillo","Lareza Jomillo",1],
+  ["JPA053","Bride","Jackie Saquibal","Jackie Saquibal",1],
+  ["JPA054","Bride","Jay Ralp Lasquite","Jay Ralp Lasquite, Teofreda Lasquite, Reynante Lasquite",3],
+  ["JPA055","Bride","Janine Lasquite","Janine Lasquite, John Reyfred Lasquite",2],
+  ["JPA056","Bride","Beatriz Almazar","Beatriz Almazar",1],
+  ["JPA057","Bride","Liza Lasquite","Liza Lasquite",1],
+  ["JPA058","Bride","Joyce Abano","Joyce Abano, Marites Lasquite",2],
+  ["JPA059","Bride","Mara Villafranca","Mara Villafranca, Norma Villafranca",2],
+  ["JPA060","Bride","Alan Herrera","Alan Herrera, Maricel Ramos",2],
+  ["JPA061","Bride","Gretchen Buenavista","Gretchen Buenavista, Simon Buenavista",2],
+  ["JPA062","Bride","Giselle Mariano","Giselle Mariano",1],
+  ["JPA063","Bride","Yvette Gatus","Yvette Gatus",1],
+  ["JPA064","Bride","Patrick Caisido","Patrick Caisido",1],
+  ["JPA065","Bride","Paolo Pangilinan","Paolo Pangilinan",1],
+  ["JPA066","Bride","Irish Zamora","Irish Zamora",1]
+];
+
+// Run ONCE from the editor (choose "rebuildGuestList", click Run) to (re)write the "Guest List" tab so every
+// invitation code, name and seat count matches the website, with everyone set to Pending.
+// WARNING: it replaces the whole tab, so run it before real RSVPs arrive.
+function rebuildGuestList() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(GUEST_LIST_SHEET) || ss.insertSheet(GUEST_LIST_SHEET);
+  sheet.clearContents();
+  var out = [['Code', 'Side', 'Main Guest Name', 'Party Members', 'Allowed Seats', 'RSVP Status', 'Party Size Confirmed', 'Confirmation Number', 'Submitted At', 'Guest Email', 'Letter Emailed At']];
+  GUEST_SEED.forEach(function (g) { out.push([g[0], g[1], g[2], g[3], g[4], 'Pending', '', '', '', '', '']); });
+  sheet.getRange(1, 1, out.length, 11).setValues(out);
+  sheet.setFrozenRows(1);
+  sheet.getRange(1, 1, 1, 11).setFontWeight('bold');
+  console.log('Guest List rebuilt: ' + GUEST_SEED.length + ' invitations.');
 }
