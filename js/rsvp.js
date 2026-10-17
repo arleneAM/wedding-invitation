@@ -32,7 +32,7 @@
   // Paste your deployed Google Apps Script Web App URL here to have every
   // RSVP (accept or decline) logged live to a Google Sheet. Leave blank to
   // disable — the site still works fully without it. See google-apps-script.gs.
-  var SHEETS_ENDPOINT = '';
+  var SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxqytHaLuJbQhbra7NJaupJA9k217Ji1AJQw20JYL2bOJiS4tsG1TJVWUb35zEGVh3G/exec';
 
   // Fallback copy — keep in sync with assets/data/guests.json.
   // Generated from the "Guest List" tab of "Guest List - Master.xlsx".
