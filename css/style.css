@@ -137,6 +137,8 @@ p { margin: 0; line-height: 1.75; }
   border-bottom: 1px solid transparent; transition: border-color .25s ease;
 }
 .text-link:hover { border-color: var(--rose-deep); }
+button.text-link { background: none; border: 0; border-bottom: 1px solid transparent; border-radius: 0; padding: 0 0 2px; font-family: inherit; cursor: pointer; }
+button.text-link:hover { border-bottom-color: var(--rose-deep); }
 
 /* ---------- Cards (a soft glass panel with a fine gilded inner frame) ---------- */
 .glass-card {
