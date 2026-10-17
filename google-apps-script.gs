@@ -322,3 +322,11 @@ function sendGuestLetter(guestRow, data) {
     return '<tr><td style="padding:4px 14px 4px 0;color:' + PALETTE.marigoldDeep + ';font-size:12px;letter-spacing:1px;text-transform:uppercase;vertical-align:top;white-space:nowrap;">' + label + '</td><td style="padding:4px 0;">' + value + '</td></tr>';
   }
 }
+
+// Run this ONCE from the editor (choose "authorizeScript" in the dropdown, click Run) to grant the script
+// permission to use the Sheet, Gmail and locks. It changes nothing.
+function authorizeScript() {
+  LockService.getScriptLock();
+  SpreadsheetApp.getActiveSpreadsheet().getName();
+  MailApp.getRemainingDailyQuota();
+}
