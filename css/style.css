@@ -85,6 +85,7 @@ p { margin: 0; line-height: 1.75; }
 /* each section gets its own soft wash of the palette */
 #details { background: linear-gradient(180deg, var(--cream) 0%, rgba(246, 201, 210, .30) 100%); }
 #story   { background: linear-gradient(180deg, rgba(246, 201, 210, .30) 0%, rgba(208, 189, 234, .34) 55%, rgba(147, 162, 232, .16) 100%); }
+#entourage { background: linear-gradient(180deg, rgba(147, 162, 232, .16) 0%, rgba(208, 189, 234, .30) 50%, rgba(246, 201, 210, .26) 100%); }
 #gallery { background: linear-gradient(180deg, rgba(147, 162, 232, .16) 0%, rgba(250, 235, 180, .50) 60%, rgba(70, 195, 198, .10) 100%); }
 #rsvp    { background: linear-gradient(180deg, rgba(70, 195, 198, .10) 0%, rgba(246, 201, 210, .34) 60%, rgba(208, 189, 234, .30) 100%); }
 #gifts   { background: linear-gradient(180deg, rgba(208, 189, 234, .30) 0%, rgba(250, 235, 180, .42) 100%); }
@@ -877,3 +878,14 @@ textarea.field-input { resize: vertical; }
   body.print-letter .letter__sheet { max-width: 640px; margin: 0 auto; padding: 2rem 1rem; }
   body.print-letter .letter { page-break-inside: avoid; }
 }
+
+/* ---------- Entourage ---------- */
+.entourage__card { padding: 2.6rem 2rem 2.2rem; text-align: center; }
+.ent-group + .ent-group { margin-top: 2.6rem; padding-top: 2.4rem; position: relative; }
+.ent-group + .ent-group::before { content: ''; position: absolute; top: 0; left: 50%; width: 120px; height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, var(--gilt), transparent); }
+.ent-group__title { font-size: clamp(1.5rem, 3.4vw, 1.9rem); font-style: italic; color: var(--rose-deep); margin-bottom: 1.4rem; }
+.ent-row + .ent-row { margin-top: 1.25rem; }
+.ent-role { font-size: .72rem; letter-spacing: .26em; text-transform: uppercase; font-weight: 600; color: var(--marigold-deep); margin-bottom: .35rem; }
+.ent-names { display: flex; flex-direction: column; gap: .15rem; font-family: var(--font-display); font-size: clamp(1.25rem, 2.8vw, 1.5rem); line-height: 1.3; color: var(--ink); }
+@media (max-width: 480px) { .entourage__card { padding: 2rem 1.1rem 1.8rem; } }
+.entourage .section-lead { text-align: center; max-width: 520px; margin: 0 auto 2rem; color: var(--ink-soft); font-family: var(--font-display); font-style: italic; font-size: 1.25rem; }
