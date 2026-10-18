@@ -39,7 +39,7 @@ var COUPLE_EMAILS = ['REPLACE-groom@example.com', 'REPLACE-bride@example.com'];
 
 var SEND_COUPLE_NOTIFICATIONS = true;    // email the couple on every RSVP
 var SEND_GUEST_CONFIRMATIONS = true;     // email a confirmation letter to guests who gave an address
-var SITE_URL = 'https://arleneam.github.io/wedding-invitation/';                       // e.g. 'https://your-wedding-site.netlify.app' (optional; adds a link to the letter)
+var SITE_URL = 'https://juanpaolo-and-arlene.netlify.app/';                       // e.g. 'https://your-wedding-site.netlify.app' (optional; adds a link to the letter)
 
 var EVENT = {
   couple: 'Juan Paolo & Arlene',
