@@ -2,23 +2,16 @@
   {
     "code": "JPA001",
     "name": "Ma. Theresa Angeles",
-    "allowedSeats": 1,
+    "allowedSeats": 3,
     "members": [
-      "Ma. Theresa Angeles"
+      "Ma. Theresa Angeles",
+      "Alan Jay Angeles",
+      "Patrick Paolo Angeles"
     ],
     "rsvpSubmitted": false
   },
   {
     "code": "JPA002",
-    "name": "Alan Jay Angeles",
-    "allowedSeats": 1,
-    "members": [
-      "Alan Jay Angeles"
-    ],
-    "rsvpSubmitted": false
-  },
-  {
-    "code": "JPA003",
     "name": "Teresita Lopez",
     "allowedSeats": 1,
     "members": [
@@ -27,7 +20,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA004",
+    "code": "JPA003",
     "name": "Alliyah Shantelle Angeles",
     "allowedSeats": 1,
     "members": [
@@ -36,7 +29,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA005",
+    "code": "JPA004",
     "name": "Katrina Paola Ramirez",
     "allowedSeats": 3,
     "members": [
@@ -47,7 +40,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA006",
+    "code": "JPA005",
     "name": "Noah Angeles",
     "allowedSeats": 1,
     "members": [
@@ -56,7 +49,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA007",
+    "code": "JPA006",
     "name": "Shelby Angeles",
     "allowedSeats": 1,
     "members": [
@@ -65,7 +58,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA008",
+    "code": "JPA007",
     "name": "Edna Lopez",
     "allowedSeats": 4,
     "members": [
@@ -77,7 +70,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA009",
+    "code": "JPA008",
     "name": "Reymart Landingin",
     "allowedSeats": 2,
     "members": [
@@ -87,7 +80,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA010",
+    "code": "JPA009",
     "name": "Josh De Dios",
     "allowedSeats": 2,
     "members": [
@@ -97,7 +90,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA011",
+    "code": "JPA010",
     "name": "Kristine Joy Escoto",
     "allowedSeats": 2,
     "members": [
@@ -107,7 +100,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA013",
+    "code": "JPA011",
     "name": "Jayson Abamo",
     "allowedSeats": 1,
     "members": [
@@ -116,7 +109,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA014",
+    "code": "JPA012",
     "name": "Shiela Miclat",
     "allowedSeats": 1,
     "members": [
@@ -125,7 +118,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA015",
+    "code": "JPA013",
     "name": "Winvic Gonzales",
     "allowedSeats": 1,
     "members": [
@@ -134,7 +127,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA016",
+    "code": "JPA014",
     "name": "Marlou Roxas",
     "allowedSeats": 1,
     "members": [
@@ -143,7 +136,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA017",
+    "code": "JPA015",
     "name": "Sandra David",
     "allowedSeats": 1,
     "members": [
@@ -152,7 +145,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA018",
+    "code": "JPA016",
     "name": "Ron Macatuno",
     "allowedSeats": 1,
     "members": [
@@ -161,7 +154,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA019",
+    "code": "JPA017",
     "name": "Ton Malonzo",
     "allowedSeats": 1,
     "members": [
@@ -170,7 +163,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA020",
+    "code": "JPA018",
     "name": "Rayniel Reynaldo",
     "allowedSeats": 2,
     "members": [
@@ -180,7 +173,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA022",
+    "code": "JPA019",
     "name": "Marx Castro",
     "allowedSeats": 2,
     "members": [
@@ -190,7 +183,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA023",
+    "code": "JPA020",
     "name": "Arlene Joy Lazaro",
     "allowedSeats": 3,
     "members": [
@@ -201,7 +194,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA024",
+    "code": "JPA021",
     "name": "Marcelina Malonzo",
     "allowedSeats": 2,
     "members": [
@@ -211,7 +204,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA026",
+    "code": "JPA022",
     "name": "Lilia Esquivel",
     "allowedSeats": 2,
     "members": [
@@ -221,7 +214,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA028",
+    "code": "JPA023",
     "name": "Marion Pablo",
     "allowedSeats": 2,
     "members": [
@@ -231,7 +224,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA030",
+    "code": "JPA024",
     "name": "Precious Cabarloc",
     "allowedSeats": 2,
     "members": [
@@ -241,7 +234,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA032",
+    "code": "JPA025",
     "name": "Kyla Gonzales",
     "allowedSeats": 1,
     "members": [
@@ -250,7 +243,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA034",
+    "code": "JPA026",
     "name": "Alena Deles",
     "allowedSeats": 4,
     "members": [
@@ -262,7 +255,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA035",
+    "code": "JPA027",
     "name": "Edgar Salvador",
     "allowedSeats": 1,
     "members": [
@@ -271,7 +264,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA036",
+    "code": "JPA028",
     "name": "Rosemarie Roxas",
     "allowedSeats": 2,
     "members": [
@@ -281,7 +274,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA037",
+    "code": "JPA029",
     "name": "Rowena Caro",
     "allowedSeats": 2,
     "members": [
@@ -291,7 +284,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA038",
+    "code": "JPA030",
     "name": "Ma. Lourdes Salvador",
     "allowedSeats": 2,
     "members": [
@@ -301,7 +294,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA039",
+    "code": "JPA031",
     "name": "Rowie Miranda",
     "allowedSeats": 1,
     "members": [
@@ -310,7 +303,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA040",
+    "code": "JPA032",
     "name": "Reynaldo Munoz",
     "allowedSeats": 1,
     "members": [
@@ -319,7 +312,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA041",
+    "code": "JPA033",
     "name": "Emelyn Lasquite",
     "allowedSeats": 1,
     "members": [
@@ -328,7 +321,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA042",
+    "code": "JPA034",
     "name": "Arnulfo Lasquite",
     "allowedSeats": 1,
     "members": [
@@ -337,7 +330,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA043",
+    "code": "JPA035",
     "name": "Athalia Jaileen Cimara",
     "allowedSeats": 1,
     "members": [
@@ -346,7 +339,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA044",
+    "code": "JPA036",
     "name": "Angela Lasquite",
     "allowedSeats": 1,
     "members": [
@@ -355,7 +348,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA045",
+    "code": "JPA037",
     "name": "Mary Grace Lasquite",
     "allowedSeats": 3,
     "members": [
@@ -366,7 +359,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA046",
+    "code": "JPA038",
     "name": "Mary Ann Lasquite",
     "allowedSeats": 1,
     "members": [
@@ -375,7 +368,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA047",
+    "code": "JPA039",
     "name": "Arnulfo Junior Lasquite",
     "allowedSeats": 1,
     "members": [
@@ -384,7 +377,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA048",
+    "code": "JPA040",
     "name": "Jhun Alfredo Lasquite",
     "allowedSeats": 4,
     "members": [
@@ -396,7 +389,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA049",
+    "code": "JPA041",
     "name": "Rose Cairme",
     "allowedSeats": 3,
     "members": [
@@ -407,7 +400,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA050",
+    "code": "JPA042",
     "name": "Joandrea Lasquite",
     "allowedSeats": 3,
     "members": [
@@ -418,7 +411,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA051",
+    "code": "JPA043",
     "name": "Lyra Jomillo",
     "allowedSeats": 1,
     "members": [
@@ -427,7 +420,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA052",
+    "code": "JPA044",
     "name": "Lareza Jomillo",
     "allowedSeats": 1,
     "members": [
@@ -436,7 +429,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA053",
+    "code": "JPA045",
     "name": "Jackie Saquibal",
     "allowedSeats": 1,
     "members": [
@@ -445,7 +438,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA054",
+    "code": "JPA046",
     "name": "Jay Ralp Lasquite",
     "allowedSeats": 3,
     "members": [
@@ -456,7 +449,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA055",
+    "code": "JPA047",
     "name": "Janine Lasquite",
     "allowedSeats": 2,
     "members": [
@@ -466,7 +459,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA056",
+    "code": "JPA048",
     "name": "Beatriz Almazar",
     "allowedSeats": 1,
     "members": [
@@ -475,7 +468,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA057",
+    "code": "JPA049",
     "name": "Liza Lasquite",
     "allowedSeats": 1,
     "members": [
@@ -484,27 +477,28 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA058",
-    "name": "Joyce Abano",
+    "code": "JPA050",
+    "name": "Marites Lasquite",
     "allowedSeats": 2,
     "members": [
-      "Joyce Abano",
-      "Marites Lasquite"
+      "Marites Lasquite",
+      "Tito Abano"
     ],
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA059",
+    "code": "JPA051",
     "name": "Mara Villafranca",
-    "allowedSeats": 2,
+    "allowedSeats": 3,
     "members": [
       "Mara Villafranca",
-      "Norma Villafranca"
+      "Norma Villafranca",
+      "Rafael Villafranca"
     ],
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA060",
+    "code": "JPA052",
     "name": "Alan Herrera",
     "allowedSeats": 2,
     "members": [
@@ -514,7 +508,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA061",
+    "code": "JPA053",
     "name": "Gretchen Buenavista",
     "allowedSeats": 2,
     "members": [
@@ -524,7 +518,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA062",
+    "code": "JPA054",
     "name": "Giselle Mariano",
     "allowedSeats": 1,
     "members": [
@@ -533,7 +527,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA063",
+    "code": "JPA055",
     "name": "Yvette Gatus",
     "allowedSeats": 1,
     "members": [
@@ -542,7 +536,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA064",
+    "code": "JPA056",
     "name": "Patrick Caisido",
     "allowedSeats": 1,
     "members": [
@@ -551,7 +545,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA065",
+    "code": "JPA057",
     "name": "Paolo Pangilinan",
     "allowedSeats": 1,
     "members": [
@@ -560,7 +554,7 @@
     "rsvpSubmitted": false
   },
   {
-    "code": "JPA066",
+    "code": "JPA058",
     "name": "Irish Zamora",
     "allowedSeats": 1,
     "members": [
