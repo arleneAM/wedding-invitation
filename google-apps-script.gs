@@ -45,7 +45,7 @@ var EVENT = {
   couple: 'Juan Paolo & Arlene',
   dateText: 'Friday, January 8, 2027',
   ceremony: { time: '4:00 PM', place: 'The Rodolfo’s Garden' },
-  reception: { time: '6:00 PM', place: 'Rodolfo’s Function Hall' },
+  reception: { time: 'Cocktails 6:00 PM · Reception 7:00 PM', place: 'Rodolfo’s Function Hall' },
   address: 'Tuazon Farm, Brgy. Lara, San Fernando, Philippines',
   attire: 'Garden formal — wear any shade from our color palette (please avoid white and ivory).',
   mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=The%20Rodolfo%27s%20Garden%2C%20Tuazon%20Farm%2C%20Brgy%20Lara%2C%20San%20Fernando%2C%20Philippines'
