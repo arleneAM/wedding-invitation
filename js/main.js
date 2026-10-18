@@ -625,6 +625,31 @@
     window.addEventListener('load', setSpeed);
   }
 
+
+  /* ================= Gift Guide: copy account number ================= */
+  function initGiftCopy() {
+    var buttons = document.querySelectorAll('.gifts__copy');
+    Array.prototype.forEach.call(buttons, function (btn) {
+      btn.addEventListener('click', function () {
+        var text = btn.getAttribute('data-copy') || '';
+        function done() {
+          btn.textContent = 'Copied';
+          btn.classList.add('is-copied');
+          setTimeout(function () { btn.textContent = 'Copy'; btn.classList.remove('is-copied'); }, 1800);
+        }
+        function fallback() {
+          var ta = document.createElement('textarea');
+          ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+          document.body.appendChild(ta); ta.select();
+          try { document.execCommand('copy'); done(); } catch (e) { /* user can still copy by hand */ }
+          document.body.removeChild(ta);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
+        else fallback();
+      });
+    });
+  }
+
   /* ================= FAQ Accordion ================= */
   function initAccordion() {
     var items = document.querySelectorAll('.accordion__item');
@@ -734,6 +759,7 @@
     initHeroBg();
     initGallery();
     initStoryReel();
+    initGiftCopy();
     initLightboxControls();
     initAccordion();
     initYouTubeMusicPlayer();

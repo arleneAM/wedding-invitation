@@ -1000,3 +1000,9 @@ textarea.field-input { resize: vertical; }
 .gifts__qrcard figcaption span { font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
 .gifts__card .gifts__qr-note { margin-top: 1.1rem; font-size: .82rem; color: var(--ink-soft); }
 @media (max-width: 560px) { .gifts__qr-grid { grid-template-columns: 1fr; max-width: 300px; gap: 1rem; } }
+.gifts__num { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: .45rem; flex-wrap: wrap; }
+.gifts__digits { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; letter-spacing: .06em; color: var(--ink); text-transform: none; }
+.gifts__qrcard figcaption .gifts__num .gifts__digits { font-size: 1.15rem; letter-spacing: .06em; text-transform: none; color: var(--ink); }
+.gifts__copy { font: inherit; font-size: .7rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--rose-deep); background: none; border: 1px solid var(--rose); border-radius: 999px; padding: .15rem .65rem; cursor: pointer; transition: background .25s ease, color .25s ease; }
+.gifts__copy:hover, .gifts__copy.is-copied { background: var(--rose-deep); color: #fff; border-color: var(--rose-deep); }
+@media (max-width: 560px) { .gifts__qrcard figcaption .gifts__num .gifts__digits { font-size: 1.25rem; } }
