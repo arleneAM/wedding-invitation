@@ -9,7 +9,7 @@
   /* -----------------------------------------------------------------
      Wedding config — edit these lines to match the real schedule
      ----------------------------------------------------------------- */
-  var WEDDING_DATE_ISO = '2027-01-08T15:30:00+08:00'; // Jan 8, 2027, 3:30 PM (Asia/Manila)
+  var WEDDING_DATE_ISO = '2027-01-08T16:00:00+08:00'; // Jan 8, 2027, 4:00 PM (Asia/Manila)
 
   // Background music — YouTube video ID (from https://www.youtube.com/shorts/bwoBmIm0YI8)
   var YOUTUBE_MUSIC_ID = 'bwoBmIm0YI8';

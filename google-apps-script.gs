@@ -44,7 +44,7 @@ var SITE_URL = 'https://arleneam.github.io/wedding-invitation/';                
 var EVENT = {
   couple: 'Juan Paolo & Arlene',
   dateText: 'Friday, January 8, 2027',
-  ceremony: { time: '3:30 PM', place: 'The Rodolfo’s Garden' },
+  ceremony: { time: '4:00 PM', place: 'The Rodolfo’s Garden' },
   reception: { time: '6:00 PM', place: 'Rodolfo’s Function Hall' },
   address: 'Tuazon Farm, Brgy. Lara, San Fernando, Philippines',
   attire: 'Garden formal — wear any shade from our color palette (please avoid white and ivory).',
