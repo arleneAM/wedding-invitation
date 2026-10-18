@@ -94,7 +94,13 @@
     { code: 'JPA055', name: 'Yvette Gatus', allowedSeats: 1, members: ['Yvette Gatus'], rsvpSubmitted: false },
     { code: 'JPA056', name: 'Patrick Caisido', allowedSeats: 1, members: ['Patrick Caisido'], rsvpSubmitted: false },
     { code: 'JPA057', name: 'Paolo Pangilinan', allowedSeats: 1, members: ['Paolo Pangilinan'], rsvpSubmitted: false },
-    { code: 'JPA058', name: 'Irish Zamora', allowedSeats: 1, members: ['Irish Zamora'], rsvpSubmitted: false }
+    { code: 'JPA058', name: 'Irish Zamora', allowedSeats: 1, members: ['Irish Zamora'], rsvpSubmitted: false },
+    { code: 'JPA059', name: 'Patricia Roxas', allowedSeats: 2, members: ['Patricia Roxas', 'Roderick Roxas'], rsvpSubmitted: false },
+    { code: 'JPA060', name: 'Raquel Mirano', allowedSeats: 2, members: ['Raquel Mirano', 'Jaime Mirano'], rsvpSubmitted: false },
+    { code: 'JPA061', name: 'Ramon Cruz', allowedSeats: 2, members: ['Ramon Cruz', 'Anne Cruz'], rsvpSubmitted: false },
+    { code: 'JPA062', name: 'Marina Cruz', allowedSeats: 1, members: ['Marina Cruz'], rsvpSubmitted: false },
+    { code: 'JPA063', name: 'Leonora Mapalad', allowedSeats: 1, members: ['Leonora Mapalad'], rsvpSubmitted: false },
+    { code: 'JPA064', name: 'Jing Takeda', allowedSeats: 1, members: ['Jing Takeda'], rsvpSubmitted: false }
   ];
 
   var guestList = FALLBACK_GUESTS;

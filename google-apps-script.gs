@@ -407,7 +407,13 @@ var GUEST_SEED = [
   ["JPA055","Bride","Yvette Gatus","Yvette Gatus",1],
   ["JPA056","Bride","Patrick Caisido","Patrick Caisido",1],
   ["JPA057","Bride","Paolo Pangilinan","Paolo Pangilinan",1],
-  ["JPA058","Bride","Irish Zamora","Irish Zamora",1]
+  ["JPA058","Bride","Irish Zamora","Irish Zamora",1],
+  ["JPA059","","Patricia Roxas","Patricia Roxas, Roderick Roxas",2],
+  ["JPA060","","Raquel Mirano","Raquel Mirano, Jaime Mirano",2],
+  ["JPA061","","Ramon Cruz","Ramon Cruz, Anne Cruz",2],
+  ["JPA062","","Marina Cruz","Marina Cruz",1],
+  ["JPA063","","Leonora Mapalad","Leonora Mapalad",1],
+  ["JPA064","","Jing Takeda","Jing Takeda",1]
 ];
 
 // Run ONCE from the editor (choose "rebuildGuestList", click Run) to (re)write the "Guest List" tab so every
@@ -433,4 +439,31 @@ function resetAllRsvps() {
   var log = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(RSVP_LOG_SHEET);
   if (log && log.getLastRow() > 1) log.deleteRows(2, log.getLastRow() - 1);
   console.log('All RSVPs cleared.');
+}
+
+// Run ONCE from the editor (choose "addNewGuests", click Run) to ADD the guests below to the bottom of the
+// "Guest List" tab. It never changes or deletes existing rows, so RSVPs already received are kept.
+// Codes already in the tab are skipped, so running it twice is harmless.
+var NEW_GUESTS = [
+  ["JPA059","","Patricia Roxas","Patricia Roxas, Roderick Roxas",2],
+  ["JPA060","","Raquel Mirano","Raquel Mirano, Jaime Mirano",2],
+  ["JPA061","","Ramon Cruz","Ramon Cruz, Anne Cruz",2],
+  ["JPA062","","Marina Cruz","Marina Cruz",1],
+  ["JPA063","","Leonora Mapalad","Leonora Mapalad",1],
+  ["JPA064","","Jing Takeda","Jing Takeda",1]
+];
+
+function addNewGuests() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(GUEST_LIST_SHEET);
+  if (!sheet) throw new Error('No "Guest List" tab found.');
+  var have = {};
+  sheet.getDataRange().getValues().forEach(function (r) { have[String(r[0]).trim()] = true; });
+  var added = [];
+  NEW_GUESTS.forEach(function (g) {
+    if (have[g[0]]) return;
+    sheet.appendRow([g[0], g[1], g[2], g[3], g[4], 'Pending', '', '', '', '', '']);
+    added.push(g[0]);
+  });
+  console.log(added.length ? 'Added: ' + added.join(', ') : 'Nothing to add (all codes already exist).');
 }
