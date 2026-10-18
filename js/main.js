@@ -598,6 +598,33 @@
     });
   }
 
+  /* ================= Our Story: rolling film reel ================= */
+  function initStoryReel() {
+    var reel = document.getElementById('storyReel');
+    if (!reel || REDUCED_MOTION) return;
+    var tracks = reel.querySelectorAll('.reel__track');
+    Array.prototype.forEach.call(tracks, function (track) {
+      var originals = Array.prototype.slice.call(track.children);
+      originals.forEach(function (fig) {
+        var clone = fig.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        var img = clone.querySelector('img');
+        if (img) img.alt = '';
+        track.appendChild(clone);
+      });
+    });
+    function setSpeed() {
+      Array.prototype.forEach.call(tracks, function (track, i) {
+        var loopWidth = track.scrollWidth / 2;
+        var pxPerSec = i === 0 ? 42 : 34;           // the two rows drift at slightly different speeds
+        track.style.setProperty('--dur', Math.max(30, loopWidth / pxPerSec).toFixed(1) + 's');
+      });
+    }
+    setSpeed();
+    window.addEventListener('resize', setSpeed);
+    window.addEventListener('load', setSpeed);
+  }
+
   /* ================= FAQ Accordion ================= */
   function initAccordion() {
     var items = document.querySelectorAll('.accordion__item');
@@ -706,6 +733,7 @@
     initScrollReveal();
     initHeroBg();
     initGallery();
+    initStoryReel();
     initLightboxControls();
     initAccordion();
     initYouTubeMusicPlayer();
