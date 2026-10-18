@@ -486,7 +486,7 @@ button.text-link:hover { border-bottom-color: var(--rose-deep); }
 .attire-guide__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.1rem; margin: 1.5rem 0 1.1rem; align-items: start; }
 .attire { background: #fff; border: 1px solid rgba(199, 168, 108, .45); border-radius: 18px; padding: 1rem .8rem 1.1rem; box-shadow: 0 8px 22px rgba(90, 60, 70, .08); }
 .attire__img { max-width: 190px; margin: 0 auto; }
-.attire__img img { display: block; width: 100%; height: auto; -webkit-mask-image: linear-gradient(#000 88%, transparent); mask-image: linear-gradient(#000 88%, transparent); }
+.attire__img img { display: block; width: 100%; height: auto; }
 .attire h4 { margin-top: .4rem; font-family: var(--font-display); font-style: italic; font-size: 1.4rem; color: var(--rose-deep); }
 .swatches { list-style: none; margin: .7rem 0 .8rem; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem .6rem; }
 .swatches li { display: block; }
