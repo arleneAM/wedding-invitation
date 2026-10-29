@@ -88,9 +88,9 @@ p { margin: 0; line-height: 1.75; }
 #story   { background: linear-gradient(180deg, rgba(246, 201, 210, .30) 0%, rgba(208, 189, 234, .34) 55%, rgba(147, 162, 232, .16) 100%); }
 #entourage { background: linear-gradient(180deg, rgba(147, 162, 232, .16) 0%, rgba(208, 189, 234, .30) 50%, rgba(246, 201, 210, .26) 100%); }
 #gallery { background: linear-gradient(180deg, rgba(147, 162, 232, .16) 0%, rgba(250, 235, 180, .50) 60%, rgba(70, 195, 198, .10) 100%); }
-#rsvp    { background: linear-gradient(180deg, var(--cream) 0%, rgba(246, 201, 210, .34) 55%, rgba(208, 189, 234, .32) 100%); }
-#gifts   { background: linear-gradient(180deg, rgba(70, 195, 198, .10) 0%, rgba(208, 189, 234, .30) 45%, rgba(250, 235, 180, .42) 100%); }
-#faqs    { background: linear-gradient(180deg, rgba(250, 235, 180, .42) 0%, var(--cream) 100%); }
+#rsvp { background: linear-gradient(180deg, rgba(70, 195, 198, .10) 0%, rgba(246, 201, 210, .34) 60%, rgba(208, 189, 234, .30) 100%); }
+#gifts { background: linear-gradient(180deg, rgba(250, 235, 180, .42) 0%, var(--cream) 100%); }
+#faqs { background: linear-gradient(180deg, rgba(208, 189, 234, .30) 0%, rgba(250, 235, 180, .42) 100%); }
 
 .eyebrow {
   display: flex; align-items: center; justify-content: center; gap: 1rem;
