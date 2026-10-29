@@ -1023,3 +1023,7 @@ textarea.field-input { resize: vertical; }
 .next-step__text { max-width: 460px; margin: 0; font-family: var(--font-display); font-style: italic; font-size: 1.45rem; line-height: 1.4; color: var(--ink); }
 .nav-link--rsvp { font-weight: 600; }
 @media (prefers-reduced-motion: reduce) { .next-step__link svg { animation: none; } }
+.accordion__list { margin: 0 0 1rem; padding-left: 1.25rem; color: var(--ink-soft); line-height: 1.7; }
+.accordion__list li { margin-bottom: .45rem; }
+.accordion__list strong { color: var(--ink); }
+.accordion__panel .text-link { font-size: inherit; }
