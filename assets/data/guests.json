@@ -618,5 +618,15 @@
       "Jing Takeda"
     ],
     "rsvpSubmitted": false
+  },
+  {
+    "code": "JPA065",
+    "name": "Marvin Galang",
+    "allowedSeats": 2,
+    "members": [
+      "Marvin Galang",
+      "Jenny Galang"
+    ],
+    "rsvpSubmitted": false
   }
 ]
