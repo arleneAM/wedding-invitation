@@ -120,9 +120,9 @@
     <a href="#story" class="nav-link">Our Story</a>
     <a href="#entourage" class="nav-link">Entourage</a>
     <a href="#gallery" class="nav-link">Gallery</a>
-    <a href="#rsvp" class="nav-link">RSVP</a>
     <a href="#gifts" class="nav-link">Gifts</a>
     <a href="#faqs" class="nav-link">FAQs</a>
+    <a href="#rsvp" class="nav-link nav-link--rsvp">RSVP</a>
   </nav>
   <div class="navbar__actions">
     <button class="icon-btn" id="musicToggle" type="button" aria-pressed="false" aria-label="Toggle background music">
@@ -172,7 +172,7 @@
         <div class="countdown__item seq" style="--d:7.45s"><span class="countdown__num" id="cd-secs">00</span><span class="countdown__label">Seconds</span></div>
       </div>
 
-      <a href="#rsvp" class="btn btn--outline-gold hero__cta seq" style="--d:8.2s">RSVP Now</a>
+      <a href="#details" class="btn btn--gold hero__cta seq" style="--d:8.2s">View the Wedding Details &darr;</a>
     </div>
     <a href="#details" class="scroll-cue seq" style="--d:9s" aria-label="Scroll to details">
       <span></span>
@@ -281,6 +281,10 @@
         </a>
       </div>
     </div>
+      <div class="next-step fade-up" data-reveal>
+      <span class="next-step__label">Continue exploring</span>
+      <a class="next-step__link" href="#program"><span>Wedding Day Timeline</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </section>
 
   <!-- ============ WEDDING DAY TIMELINE ============ -->
@@ -329,6 +333,10 @@
           </article>
         </li>
       </ol>
+    </div>
+      <div class="next-step fade-up" data-reveal>
+      <span class="next-step__label">Continue exploring</span>
+      <a class="next-step__link" href="#story"><span>Our Story</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </section>
 
@@ -451,6 +459,10 @@
         </li>
       </ol>
     </div>
+      <div class="next-step fade-up" data-reveal>
+      <span class="next-step__label">Continue exploring</span>
+      <a class="next-step__link" href="#entourage"><span>Our Entourage</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </section>
 
   <!-- ============ ENTOURAGE ============ -->
@@ -490,6 +502,10 @@
         </div>
       </div>
     </div>
+      <div class="next-step fade-up" data-reveal>
+      <span class="next-step__label">Continue exploring</span>
+      <a class="next-step__link" href="#gallery"><span>The Gallery</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </section>
 
   <!-- ============ GALLERY ============ -->
@@ -510,6 +526,10 @@
       <div class="cinema__dots" id="cinemaDots" role="group" aria-label="Choose a photo"></div>
       <p class="cinema__hint">Swipe or use the arrows to browse &middot; tap the photo to view it full size</p>
     </div>
+      <div class="next-step fade-up" data-reveal>
+      <span class="next-step__label">Continue exploring</span>
+      <a class="next-step__link" href="#gifts"><span>Gift Guide</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </section>
 
   <!-- Lightbox -->
@@ -522,84 +542,6 @@
     </figure>
     <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Next photo">&#10095;</button>
   </div>
-
-  <!-- ============ RSVP ============ -->
-  <section class="section rsvp" id="rsvp">
-    <div class="container container--narrow">
-      <p class="eyebrow fade-up" data-reveal>Kindly Respond</p>
-      <h2 class="section-title fade-up" data-reveal>RSVP Portal</h2>
-      <div class="divider fade-up" data-reveal><svg viewBox="0 0 200 40"><use href="#ornament-divider"/></svg></div>
-      <p class="rsvp__intro fade-up" data-reveal>Just start typing your name &mdash; the first few letters are enough &mdash; then pick yourself from the list. We kindly ask that you respond by <strong id="rsvpDeadlineText">December 1, 2026</strong>.</p>
-
-      <div class="glass-card rsvp__panel fade-up" data-reveal>
-
-        <p class="rsvp__panel-intro">Every seat is reserved with love and intention.<br>Kindly confirm your attendance below.</p>
-
-        <!-- STEP 1: Code lookup -->
-        <form id="codeForm" class="rsvp__step" data-step="lookup">
-          <label class="field-label" for="guestNameInput">Enter Your Full Name</label>
-          <div class="code-input-row">
-            <div class="name-input-wrap">
-              <input type="text" id="guestNameInput" name="guestName" class="field-input name-input" placeholder="Start typing your name…" autocomplete="off" autocapitalize="words" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="nameSuggestions" aria-expanded="false" required>
-              <ul id="nameSuggestions" class="name-suggestions" role="listbox" aria-label="Matching guests" hidden></ul>
-            </div>
-            <button type="submit" class="btn btn--gold" id="codeSubmitBtn">Find My Invitation</button>
-          </div>
-          <p class="field-error" id="codeError" role="alert" aria-live="assertive"></p>
-        </form>
-
-        <!-- STEP 2: Guest confirmed, RSVP form -->
-        <form id="rsvpForm" class="rsvp__step rsvp__step--hidden" data-step="rsvp" novalidate>
-          <div class="guest-banner" id="guestBanner">
-            <p>Welcome, <strong id="guestName">&mdash;</strong></p>
-            <p class="guest-banner__seats">You have <strong id="guestSeats">0</strong> seat(s) reserved in your honor.</p>
-            <button type="button" class="text-link guest-banner__change" id="changeCodeBtn">Not you? Enter a different name</button>
-          </div>
-
-          <fieldset class="field-group">
-            <legend class="field-label">Who&rsquo;s attending?</legend>
-            <p class="party-members__hint">Only the guests listed on this invitation may attend &mdash; everyone is set to <em>Joyfully Accepts</em> by default, so simply toggle to <em>Regretfully Declines</em> for anyone who won&rsquo;t be joining.</p>
-            <div id="partyMembers" class="party-members"></div>
-          </fieldset>
-
-          <div class="field-group">
-            <label class="field-label" for="guestEmail">Email for your confirmation letter (optional)</label>
-            <input type="email" id="guestEmail" name="guestEmail" class="field-input" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="254">
-            <p class="field-hint">We&rsquo;ll email you a confirmation letter. The couple are notified of your response either way.</p>
-          </div>
-
-          <div class="field-group">
-            <label class="field-label" for="message">A note for the couple (optional)</label>
-            <textarea id="message" name="message" class="field-input" rows="2" placeholder="Your well wishes..."></textarea>
-          </div>
-
-          <p class="field-error" id="rsvpError" role="alert" aria-live="assertive"></p>
-          <button type="submit" class="btn btn--gold rsvp__submit" id="rsvpSubmitBtn">Confirm Response</button>
-        </form>
-
-        <!-- STEP 3: Already submitted -->
-        <div class="rsvp__step rsvp__step--hidden" id="alreadyStep" data-step="already">
-          <div class="already-panel">
-            <svg viewBox="0 0 24 24" class="already-panel__icon"><path d="M9 12.5l2 2 4-4.5M12 21s-7-5-9-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 5-9 10-9 10Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
-            <p>An RSVP has already been recorded for this invitation.</p>
-            <p class="already-panel__conf">Confirmation #: <strong id="alreadyConfNumber">&mdash;</strong></p>
-            <button type="button" class="text-link" id="alreadyChangeBtn">Enter a different name</button>
-          </div>
-        </div>
-
-        <!-- STEP 4: Closed -->
-        <div class="rsvp__step rsvp__step--hidden" id="closedStep" data-step="closed">
-          <div class="already-panel">
-            <p>The RSVP period has closed. Please reach out to the couple directly if you need assistance.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <p class="rsvp__disclaimer">Only guests with <span class="rsvp__highlight">confirmed RSVPs</span> will be accommodated at the celebration. We respectfully ask that you refer to the number of reserved seats indicated in your invitation.</p>
-      <p class="rsvp__disclaimer"><span class="rsvp__highlight">Strictly no plus one.</span> Thank you for your kind understanding.</p>
-    </div>
-  </section>
 
   <!-- Confirmation Modal -->
   <div class="modal" id="confirmModal" role="dialog" aria-modal="true" aria-label="RSVP confirmation" hidden>
@@ -693,6 +635,10 @@
         <p class="gifts__sign">With love and gratitude,<span>Juan Paolo &amp; Arlene</span></p>
       </div>
     </div>
+      <div class="next-step fade-up" data-reveal>
+      <span class="next-step__label">Continue exploring</span>
+      <a class="next-step__link" href="#faqs"><span>Good to Know (FAQs)</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
   </section>
 
   <!-- ============ FAQS ============ -->
@@ -758,6 +704,89 @@
           </div>
         </div>
       </div>
+    </div>
+      <div class="next-step next-step--rsvp fade-up" data-reveal>
+      <span class="next-step__label">You&rsquo;ve seen it all</span>
+      <p class="next-step__text">Now we&rsquo;d love to hear from you &mdash; kindly let us know if you can celebrate with us.</p>
+      <a class="btn btn--gold" href="#rsvp">Kindly RSVP &darr;</a>
+    </div>
+  </section>
+
+  <!-- ============ RSVP ============ -->
+  <section class="section rsvp" id="rsvp">
+    <div class="container container--narrow">
+      <p class="eyebrow fade-up" data-reveal>Kindly Respond</p>
+      <h2 class="section-title fade-up" data-reveal>RSVP Portal</h2>
+      <div class="divider fade-up" data-reveal><svg viewBox="0 0 200 40"><use href="#ornament-divider"/></svg></div>
+      <p class="rsvp__intro fade-up" data-reveal>Just start typing your name &mdash; the first few letters are enough &mdash; then pick yourself from the list. We kindly ask that you respond by <strong id="rsvpDeadlineText">December 1, 2026</strong>.</p>
+
+      <div class="glass-card rsvp__panel fade-up" data-reveal>
+
+        <p class="rsvp__panel-intro">Every seat is reserved with love and intention.<br>Kindly confirm your attendance below.</p>
+
+        <!-- STEP 1: Code lookup -->
+        <form id="codeForm" class="rsvp__step" data-step="lookup">
+          <label class="field-label" for="guestNameInput">Enter Your Full Name</label>
+          <div class="code-input-row">
+            <div class="name-input-wrap">
+              <input type="text" id="guestNameInput" name="guestName" class="field-input name-input" placeholder="Start typing your name…" autocomplete="off" autocapitalize="words" spellcheck="false" role="combobox" aria-autocomplete="list" aria-controls="nameSuggestions" aria-expanded="false" required>
+              <ul id="nameSuggestions" class="name-suggestions" role="listbox" aria-label="Matching guests" hidden></ul>
+            </div>
+            <button type="submit" class="btn btn--gold" id="codeSubmitBtn">Find My Invitation</button>
+          </div>
+          <p class="field-error" id="codeError" role="alert" aria-live="assertive"></p>
+        </form>
+
+        <!-- STEP 2: Guest confirmed, RSVP form -->
+        <form id="rsvpForm" class="rsvp__step rsvp__step--hidden" data-step="rsvp" novalidate>
+          <div class="guest-banner" id="guestBanner">
+            <p>Welcome, <strong id="guestName">&mdash;</strong></p>
+            <p class="guest-banner__seats">You have <strong id="guestSeats">0</strong> seat(s) reserved in your honor.</p>
+            <button type="button" class="text-link guest-banner__change" id="changeCodeBtn">Not you? Enter a different name</button>
+          </div>
+
+          <fieldset class="field-group">
+            <legend class="field-label">Who&rsquo;s attending?</legend>
+            <p class="party-members__hint">Only the guests listed on this invitation may attend &mdash; everyone is set to <em>Joyfully Accepts</em> by default, so simply toggle to <em>Regretfully Declines</em> for anyone who won&rsquo;t be joining.</p>
+            <div id="partyMembers" class="party-members"></div>
+          </fieldset>
+
+          <div class="field-group">
+            <label class="field-label" for="guestEmail">Email for your confirmation letter (optional)</label>
+            <input type="email" id="guestEmail" name="guestEmail" class="field-input" placeholder="you@example.com" autocomplete="email" inputmode="email" maxlength="254">
+            <p class="field-hint">We&rsquo;ll email you a confirmation letter. The couple are notified of your response either way.</p>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label" for="message">A note for the couple (optional)</label>
+            <textarea id="message" name="message" class="field-input" rows="2" placeholder="Your well wishes..."></textarea>
+          </div>
+
+          <p class="field-error" id="rsvpError" role="alert" aria-live="assertive"></p>
+          <button type="submit" class="btn btn--gold rsvp__submit" id="rsvpSubmitBtn">Confirm Response</button>
+        </form>
+
+        <!-- STEP 3: Already submitted -->
+        <div class="rsvp__step rsvp__step--hidden" id="alreadyStep" data-step="already">
+          <div class="already-panel">
+            <svg viewBox="0 0 24 24" class="already-panel__icon"><path d="M9 12.5l2 2 4-4.5M12 21s-7-5-9-10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c-2 5-9 10-9 10Z" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linejoin="round" stroke-linecap="round"/></svg>
+            <p>An RSVP has already been recorded for this invitation.</p>
+            <p class="already-panel__conf">Confirmation #: <strong id="alreadyConfNumber">&mdash;</strong></p>
+            <button type="button" class="text-link" id="alreadyChangeBtn">Enter a different name</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Closed -->
+        <div class="rsvp__step rsvp__step--hidden" id="closedStep" data-step="closed">
+          <div class="already-panel">
+            <p>The RSVP period has closed. Please reach out to the couple directly if you need assistance.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="rsvp__disclaimer">Only guests with <span class="rsvp__highlight">confirmed RSVPs</span> will be accommodated at the celebration. We respectfully ask that you refer to the number of reserved seats indicated in your invitation.</p>
+      <p class="rsvp__disclaimer"><span class="rsvp__highlight">Strictly no plus one.</span> Thank you for your kind understanding.</p>
     </div>
   </section>
 
