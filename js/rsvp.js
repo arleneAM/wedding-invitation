@@ -101,7 +101,11 @@
     { code: 'JPA062', name: 'Marina Cruz', allowedSeats: 1, members: ['Marina Cruz'], rsvpSubmitted: false },
     { code: 'JPA063', name: 'Leonora Mapalad', allowedSeats: 1, members: ['Leonora Mapalad'], rsvpSubmitted: false },
     { code: 'JPA064', name: 'Jing Takeda', allowedSeats: 1, members: ['Jing Takeda'], rsvpSubmitted: false },
-    { code: 'JPA065', name: 'Marvin Galang', allowedSeats: 2, members: ['Marvin Galang', 'Jenny Galang'], rsvpSubmitted: false }
+    { code: 'JPA065', name: 'Marvin Galang', allowedSeats: 2, members: ['Marvin Galang', 'Jenny Galang'], rsvpSubmitted: false },
+    { code: 'JPA066', name: 'Dicky Ip', allowedSeats: 1, members: ['Dicky Ip'], rsvpSubmitted: false },
+    { code: 'JPA067', name: 'Bea Tanedo', allowedSeats: 1, members: ['Bea Tanedo'], rsvpSubmitted: false },
+    { code: 'JPA068', name: 'Lara Barraza Ramiro', allowedSeats: 1, members: ['Lara Barraza Ramiro'], rsvpSubmitted: false },
+    { code: 'JPA069', name: 'Bugsy Delos Los Reyes', allowedSeats: 1, members: ['Bugsy Delos Los Reyes'], rsvpSubmitted: false }
   ];
 
   var guestList = FALLBACK_GUESTS;
