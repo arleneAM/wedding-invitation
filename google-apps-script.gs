@@ -418,7 +418,9 @@ var GUEST_SEED = [
   ["JPA066","","Dicky Ip","Dicky Ip",1],
   ["JPA067","","Bea Tanedo","Bea Tanedo",1],
   ["JPA068","","Lara Barraza Ramiro","Lara Barraza Ramiro",1],
-  ["JPA069","","Bugsy Delos Los Reyes","Bugsy Delos Los Reyes",1]
+  ["JPA069","","Bugsy Delos Los Reyes","Bugsy Delos Los Reyes",1],
+  ["JPA070","","Regina Garcia-Malang","Regina Garcia-Malang, Kevin Malang",2],
+  ["JPA071","","Jobelle Enosario-Dabu","Jobelle Enosario-Dabu",1]
 ];
 
 // Run ONCE from the editor (choose "rebuildGuestList", click Run) to (re)write the "Guest List" tab so every
@@ -460,7 +462,9 @@ var NEW_GUESTS = [
   ["JPA066","","Dicky Ip","Dicky Ip",1],
   ["JPA067","","Bea Tanedo","Bea Tanedo",1],
   ["JPA068","","Lara Barraza Ramiro","Lara Barraza Ramiro",1],
-  ["JPA069","","Bugsy Delos Los Reyes","Bugsy Delos Los Reyes",1]
+  ["JPA069","","Bugsy Delos Los Reyes","Bugsy Delos Los Reyes",1],
+  ["JPA070","","Regina Garcia-Malang","Regina Garcia-Malang, Kevin Malang",2],
+  ["JPA071","","Jobelle Enosario-Dabu","Jobelle Enosario-Dabu",1]
 ];
 
 function addNewGuests() {
